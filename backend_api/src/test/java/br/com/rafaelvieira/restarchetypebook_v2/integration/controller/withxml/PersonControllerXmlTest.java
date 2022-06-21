@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import br.com.rafaelvieira.restarchetypebook_v2.config.ConfigTest;
+import br.com.rafaelvieira.restarchetypebook_v2.data.security.TokenVO;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.containers.AbstractIntegrationTest;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.AccountCredentialsVO;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.PersonVO;
-import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.TokenVO;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.pagedmodels.PagedModelPerson;
 
 import org.junit.jupiter.api.BeforeAll;

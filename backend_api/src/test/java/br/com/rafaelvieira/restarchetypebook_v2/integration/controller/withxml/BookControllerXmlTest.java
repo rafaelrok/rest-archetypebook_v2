@@ -9,11 +9,12 @@ import java.util.Date;
 import java.util.List;
 
 import br.com.rafaelvieira.restarchetypebook_v2.config.ConfigTest;
+import br.com.rafaelvieira.restarchetypebook_v2.data.security.TokenVO;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.containers.AbstractIntegrationTest;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.AccountCredentialsVO;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.BookVO;
-import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.TokenVO;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.pagedmodels.PagedModelBook;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;

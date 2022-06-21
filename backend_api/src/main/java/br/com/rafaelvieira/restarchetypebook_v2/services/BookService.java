@@ -13,6 +13,7 @@ import br.com.rafaelvieira.restarchetypebook_v2.exceptions.ResourceNotFoundExcep
 import br.com.rafaelvieira.restarchetypebook_v2.mapper.DozerMapper;
 import br.com.rafaelvieira.restarchetypebook_v2.model.Book;
 import br.com.rafaelvieira.restarchetypebook_v2.repositories.BookRepository;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PagedResourcesAssembler;
@@ -30,7 +31,7 @@ public class BookService {
     @Autowired
     BookRepository repository;
 
-    @Autowired
+    @Resource
     PagedResourcesAssembler<BookVO> assembler;
 
     public PagedModel<EntityModel<BookVO>> findAll(Pageable pageable) {
