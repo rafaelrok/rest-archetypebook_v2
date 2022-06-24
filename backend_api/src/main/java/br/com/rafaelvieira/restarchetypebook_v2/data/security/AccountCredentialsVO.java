@@ -1,10 +1,12 @@
 package br.com.rafaelvieira.restarchetypebook_v2.data.security;
 
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class AccountCredentialsVO implements Serializable{
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private String username;

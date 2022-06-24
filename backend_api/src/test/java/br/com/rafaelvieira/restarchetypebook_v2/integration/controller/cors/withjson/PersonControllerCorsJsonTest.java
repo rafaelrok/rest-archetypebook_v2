@@ -159,7 +159,6 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 		assertEquals("New York City, New York, US", persistedPerson.getAddress());
 		assertEquals("Male", persistedPerson.getGender());
 	}
-	
 
 	@Test
 	@Order(4)

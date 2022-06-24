@@ -12,14 +12,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService implements UserDetailsService {
 
-    private Logger logger = Logger.getLogger(UserService.class.getName());
+    private final Logger logger = Logger.getLogger(UserService.class.getName());
 
     @Autowired
     UserRepository repository;
 
-    public UserService(UserRepository repository) {
-        this.repository = repository;
-    }
+//    public UserService(UserRepository repository) {
+//        this.repository = repository;
+//    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
