@@ -10,11 +10,8 @@ import br.com.rafaelvieira.restarchetypebook_v2.integration.containers.AbstractI
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.AccountCredentialsVO;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.PersonVO;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.TokenVO;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -34,7 +31,6 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 	
 	private static RequestSpecification specification;
 	private static ObjectMapper objectMapper;
-
 	private static PersonVO person;
 	
 	@BeforeAll
@@ -93,13 +89,12 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 		PersonVO persistedPerson = objectMapper.readValue(content, PersonVO.class);
 		person = persistedPerson;
 		
-		assertNotNull(persistedPerson);
-		
-		assertNotNull(persistedPerson.getId());
-		assertNotNull(persistedPerson.getFirstName());
-		assertNotNull(persistedPerson.getLastName());
-		assertNotNull(persistedPerson.getAddress());
-		assertNotNull(persistedPerson.getGender());
+		Assertions.assertNotNull(persistedPerson);
+		Assertions.assertNotNull(persistedPerson.getId());
+		Assertions.assertNotNull(persistedPerson.getFirstName());
+		Assertions.assertNotNull(persistedPerson.getLastName());
+		Assertions.assertNotNull(persistedPerson.getAddress());
+		Assertions.assertNotNull(persistedPerson.getGender());
 		
 		assertTrue(persistedPerson.getId() > 0);
 		
@@ -126,7 +121,7 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 							.body()
 								.asString();
 		
-		assertNotNull(content);
+		Assertions.assertNotNull(content);
 		assertEquals("Invalid CORS request", content);
 	}
 
@@ -150,13 +145,12 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 		PersonVO persistedPerson = objectMapper.readValue(content, PersonVO.class);
 		person = persistedPerson;
 		
-		assertNotNull(persistedPerson);
-		
-		assertNotNull(persistedPerson.getId());
-		assertNotNull(persistedPerson.getFirstName());
-		assertNotNull(persistedPerson.getLastName());
-		assertNotNull(persistedPerson.getAddress());
-		assertNotNull(persistedPerson.getGender());
+		Assertions.assertNotNull(persistedPerson);
+		Assertions.assertNotNull(persistedPerson.getId());
+		Assertions.assertNotNull(persistedPerson.getFirstName());
+		Assertions.assertNotNull(persistedPerson.getLastName());
+		Assertions.assertNotNull(persistedPerson.getAddress());
+		Assertions.assertNotNull(persistedPerson.getGender());
 		
 		assertTrue(persistedPerson.getId() > 0);
 		
@@ -185,7 +179,7 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 							.asString();
 
 		
-		assertNotNull(content);
+		Assertions.assertNotNull(content);
 		assertEquals("Invalid CORS request", content);
 	}
 	

@@ -14,14 +14,14 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("RESTful API with Java 18 and Spring Boot 3")
+                        .title("REST_full API (Archetype_book_v2) with Java 18 and Spring Boot 3")
                         .version("v1")
-                        .description("Some description about your API")
-                        .termsOfService("https://pub.erudio.com.br/meus-cursos")
+                        .description("API para orquestração de livros")
+                        .termsOfService("https://github.com/rafaelrok/rest-archetypebook_v2")
                         .license(
                                 new License()
                                         .name("Apache 2.0")
-                                        .url("https://pub.erudio.com.br/meus-cursos")
+                                        .url("https://github.com/rafaelrok/rest-archetypebook_v2/blob/main/LICENSE")
                         )
                 );
     }

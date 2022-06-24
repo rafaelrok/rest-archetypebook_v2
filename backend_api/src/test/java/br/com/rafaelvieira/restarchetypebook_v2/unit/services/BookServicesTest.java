@@ -29,7 +29,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class BookServicesTest {
 
-    MockBook input;
+    MockBook mockBook;
 
     @InjectMocks
     private BookService service;
@@ -39,13 +39,13 @@ class BookServicesTest {
 
     @BeforeEach
     void setUpMocks() throws Exception {
-        input = new MockBook();
+        mockBook = new MockBook();
         MockitoAnnotations.openMocks(this);
     }
 
     @Test
     void testFindById() {
-        Book entity = input.mockEntity(1);
+        Book entity = mockBook.mockEntity(1);
         entity.setId(1L);
 
         when(repository.findById(1L)).thenReturn(Optional.of(entity));
@@ -64,13 +64,13 @@ class BookServicesTest {
 
     @Test
     void testCreate() {
-        Book entity = input.mockEntity(1);
+        Book entity = mockBook.mockEntity(1);
         entity.setId(1L);
 
         Book persisted = entity;
-        persisted.setId(1L);
+        entity.setId(1L);
 
-        BookVO vo = input.mockVO(1);
+        BookVO vo = mockBook.mockVO(1);
         vo.setKey(1L);
 
         when(repository.save(entity)).thenReturn(persisted);
@@ -103,17 +103,16 @@ class BookServicesTest {
 
     @Test
     void testUpdate() {
-        Book entity = input.mockEntity(1);
+        Book entity = mockBook.mockEntity(1);
 
-        Book persisted = entity;
-        persisted.setId(1L);
+        entity.setId(1L);
 
-        BookVO vo = input.mockVO(1);
+        BookVO vo = mockBook.mockVO(1);
         vo.setKey(1L);
 
 
         when(repository.findById(1L)).thenReturn(Optional.of(entity));
-        when(repository.save(entity)).thenReturn(persisted);
+        when(repository.save(entity)).thenReturn(entity);
 
         var result = service.update(vo);
 
@@ -144,7 +143,7 @@ class BookServicesTest {
 
     @Test
     void testDelete() {
-        Book entity = input.mockEntity(1);
+        Book entity = mockBook.mockEntity(1);
         entity.setId(1L);
 
         when(repository.findById(1L)).thenReturn(Optional.of(entity));

@@ -35,10 +35,11 @@ public class AbstractIntegrationTest {
 		public void initialize(ConfigurableApplicationContext applicationContext) {
 			startContainers();
 			ConfigurableEnvironment environment = applicationContext.getEnvironment();
-			MapPropertySource testcontainers = new MapPropertySource(
-				"testcontainers",
+			MapPropertySource containers = new MapPropertySource(
+				"containers",
 				(Map) createConnectionConfiguration());
-			environment.getPropertySources().addFirst(testcontainers);
+			environment.getPropertySources().addFirst(containers);
 		}
+
 	}
 }

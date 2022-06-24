@@ -28,7 +28,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class PersonServicesTest {
 
-    MockPerson input;
+    MockPerson mockPerson;
 
     @InjectMocks
     private PersonService service;
@@ -38,13 +38,13 @@ class PersonServicesTest {
 
     @BeforeEach
     void setUpMocks() throws Exception {
-        input = new MockPerson();
+        mockPerson = new MockPerson();
         MockitoAnnotations.openMocks(this);
     }
 
     @Test
     void testFindById() {
-        Person entity = input.mockEntity(1);
+        Person entity = mockPerson.mockEntity(1);
         entity.setId(1L);
 
         when(repository.findById(1L)).thenReturn(Optional.of(entity));
@@ -63,16 +63,15 @@ class PersonServicesTest {
 
     @Test
     void testCreate() {
-        Person entity = input.mockEntity(1);
+        Person entity = mockPerson.mockEntity(1);
         entity.setId(1L);
 
-        Person persisted = entity;
-        persisted.setId(1L);
+        entity.setId(1L);
 
-        PersonVO vo = input.mockVO(1);
+        PersonVO vo = mockPerson.mockVO(1);
         vo.setKey(1L);
 
-        when(repository.save(entity)).thenReturn(persisted);
+        when(repository.save(entity)).thenReturn(entity);
 
         var result = service.create(vo);
 
@@ -99,20 +98,17 @@ class PersonServicesTest {
         assertTrue(actualMessage.contains(expectedMessage));
     }
 
-
     @Test
     void testUpdate() {
-        Person entity = input.mockEntity(1);
+        Person entity = mockPerson.mockEntity(1);
 
-        Person persisted = entity;
-        persisted.setId(1L);
+        entity.setId(1L);
 
-        PersonVO vo = input.mockVO(1);
+        PersonVO vo = mockPerson.mockVO(1);
         vo.setKey(1L);
 
-
         when(repository.findById(1L)).thenReturn(Optional.of(entity));
-        when(repository.save(entity)).thenReturn(persisted);
+        when(repository.save(entity)).thenReturn(entity);
 
         var result = service.update(vo);
 
@@ -141,7 +137,7 @@ class PersonServicesTest {
 
     @Test
     void testDelete() {
-        Person entity = input.mockEntity(1);
+        Person entity = mockPerson.mockEntity(1);
         entity.setId(1L);
 
         when(repository.findById(1L)).thenReturn(Optional.of(entity));
