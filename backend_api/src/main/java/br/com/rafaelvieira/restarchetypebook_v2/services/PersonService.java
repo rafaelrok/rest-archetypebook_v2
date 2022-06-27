@@ -38,9 +38,7 @@ public class PersonService {
     public PagedModel<EntityModel<PersonVO>> findAll(Pageable pageable) {
 
         logger.info("Finding all people!");
-
         var personPage = repository.findAll(pageable);
-
         var personVosPage = personPage.map(p -> DozerMapper.parseObject(p, PersonVO.class));
         personVosPage.map(
                 p -> p.add(
@@ -59,9 +57,7 @@ public class PersonService {
     public PagedModel<EntityModel<PersonVO>> findPersonByName(String firstname, Pageable pageable) {
 
         logger.info("Finding all people!");
-
         var personPage = repository.findPersonsByName(firstname, pageable);
-
         var personVosPage = personPage.map(p -> DozerMapper.parseObject(p, PersonVO.class));
         personVosPage.map(
                 p -> p.add(
@@ -80,7 +76,6 @@ public class PersonService {
     public PersonVO findById(Long id) {
 
         logger.info("Finding one person!");
-
         var entity = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
         var vo = DozerMapper.parseObject(entity, PersonVO.class);
@@ -91,7 +86,6 @@ public class PersonService {
     public PersonVO create(PersonVO person) {
 
         if (person == null) throw new RequiredObjectIsNullException();
-
         logger.info("Creating one person!");
         var entity = DozerMapper.parseObject(person, Person.class);
         var vo =  DozerMapper.parseObject(repository.save(entity), PersonVO.class);
@@ -102,9 +96,7 @@ public class PersonService {
     public PersonVO update(PersonVO person) {
 
         if (person == null) throw new RequiredObjectIsNullException();
-
         logger.info("Updating one person!");
-
         var entity = repository.findById(person.getKey())
                 .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
 
@@ -122,9 +114,7 @@ public class PersonService {
     public PersonVO disablePerson(Long id) {
 
         logger.info("Disabling one person!");
-
         repository.disablePerson(id);
-
         var entity = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
         var vo = DozerMapper.parseObject(entity, PersonVO.class);
@@ -135,7 +125,6 @@ public class PersonService {
     public void delete(Long id) {
 
         logger.info("Deleting one person!");
-
         var entity = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
         repository.delete(entity);

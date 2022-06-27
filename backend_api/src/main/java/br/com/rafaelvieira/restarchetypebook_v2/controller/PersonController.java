@@ -40,10 +40,8 @@ public class PersonController {
     @Autowired
     private PersonService service;
 
-    @GetMapping(
-            produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.APPLICATION_YML })
-    @Operation(summary = "Finds all People", description = "Finds all People",
-            tags = {"People"},
+    @GetMapping(produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.APPLICATION_YML })
+    @Operation(summary = "Finds all People", description = "Finds all People", tags = {"People"},
             responses = {
                     @ApiResponse(description = "Success", responseCode = "200",
                             content = {
