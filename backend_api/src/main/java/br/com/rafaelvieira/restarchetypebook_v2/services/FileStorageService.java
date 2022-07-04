@@ -44,8 +44,13 @@ public class FileStorageService {
                 throw new FileStorageException(
                         "Sorry! Filename contains invalid path sequence " + filename);
             }
+            //Armazenamento em disco
+            //TODO: Implementado Armazenamento em disco
             Path targetLocation = this.fileStorageLocation.resolve(filename);
             Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
+
+            //Armazenamento no banco de dados
+            //TODO: Implementado do armazenamento no banco de dados
             return filename;
         } catch (Exception e) {
             throw new FileStorageException(
@@ -55,8 +60,14 @@ public class FileStorageService {
 
     public Resource loadFileAsResource(String filename) {
         try {
+            //Leitura em disco
+            //TODO: Implementado leitura em disco
             Path filePath = this.fileStorageLocation.resolve(filename).normalize();
             Resource resource = new UrlResource(filePath.toUri());
+
+            //Leitura do banco de dados
+            //TODO: Implementado leitura no banco de dados
+
             if (resource.exists()) return resource;
             else throw new MyFileNotFoundException("File not found");
         } catch (Exception e) {

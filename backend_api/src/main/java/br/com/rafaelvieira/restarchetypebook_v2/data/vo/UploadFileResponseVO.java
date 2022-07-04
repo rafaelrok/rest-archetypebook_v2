@@ -1,6 +1,5 @@
 package br.com.rafaelvieira.restarchetypebook_v2.data.vo;
 
-
 import java.io.Serial;
 import java.io.Serializable;
 

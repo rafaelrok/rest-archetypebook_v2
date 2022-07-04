@@ -8,11 +8,8 @@ import br.com.rafaelvieira.restarchetypebook_v2.integration.containers.AbstractI
 import br.com.rafaelvieira.restarchetypebook_v2.integration.controller.withyaml.mapper.YMLMapper;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.AccountCredentialsVO;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.TokenVO;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -72,8 +69,8 @@ public class AuthControllerYamlTest extends AbstractIntegrationTest {
 							.body()
 								.as(TokenVO.class, objectMapper);
 		
-		assertNotNull(tokenVO.getAccessToken());
-		assertNotNull(tokenVO.getRefreshToken());
+		Assertions.assertNotNull(tokenVO.getAccessToken());
+		Assertions.assertNotNull(tokenVO.getRefreshToken());
 	}
 	
 	@Test
@@ -102,7 +99,7 @@ public class AuthControllerYamlTest extends AbstractIntegrationTest {
 					.body()
 						.as(TokenVO.class, objectMapper);
 		
-		assertNotNull(newTokenVO.getAccessToken());
-		assertNotNull(newTokenVO.getRefreshToken());
+		Assertions.assertNotNull(newTokenVO.getAccessToken());
+		Assertions.assertNotNull(newTokenVO.getRefreshToken());
 	}
 }

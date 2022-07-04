@@ -1,6 +1,5 @@
 package br.com.rafaelvieira.restarchetypebook_v2.controller;
 
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
@@ -30,7 +29,7 @@ import jakarta.servlet.http.HttpServletRequest;
 @RequestMapping("/api/file/v1")
 public class FileController {
 
-    private Logger logger = Logger.getLogger(FileController.class.getName());
+    private final Logger logger = Logger.getLogger(FileController.class.getName());
 
     @Autowired
     private FileStorageService service;
@@ -51,8 +50,7 @@ public class FileController {
     }
 
     @PostMapping("/uploadMultipleFiles")
-    public List<UploadFileResponseVO> uploadMultipleFiles(
-            @RequestParam("files") MultipartFile[] files) {
+    public List<UploadFileResponseVO> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
         logger.info("Storing files to disk");
 
         return Arrays.asList(files)
@@ -63,11 +61,9 @@ public class FileController {
 
     //MY_file.txt
     @GetMapping("/downloadFile/{filename:.+}")
-    public ResponseEntity<Resource> downloadFile(
-            @PathVariable String filename, HttpServletRequest request) {
+    public ResponseEntity<Resource> downloadFile(@PathVariable String filename, HttpServletRequest request) {
 
         logger.info("Reading a file on disk");
-
         Resource resource = service.loadFileAsResource(filename);
         String contentType = "";
 

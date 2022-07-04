@@ -8,6 +8,7 @@ import br.com.rafaelvieira.restarchetypebook_v2.integration.containers.AbstractI
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.AccountCredentialsVO;
 import br.com.rafaelvieira.restarchetypebook_v2.integration.vo.TokenVO;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -43,8 +44,8 @@ public class AuthControllerJsonTest extends AbstractIntegrationTest {
 							.body()
 								.as(TokenVO.class);
 		
-		assertNotNull(tokenVO.getAccessToken());
-		assertNotNull(tokenVO.getRefreshToken());
+		Assertions.assertNotNull(tokenVO.getAccessToken());
+		Assertions.assertNotNull(tokenVO.getRefreshToken());
 	}
 	
 	@Test
@@ -65,7 +66,7 @@ public class AuthControllerJsonTest extends AbstractIntegrationTest {
 					.body()
 						.as(TokenVO.class);
 		
-		assertNotNull(newTokenVO.getAccessToken());
-		assertNotNull(newTokenVO.getRefreshToken());
+		Assertions.assertNotNull(newTokenVO.getAccessToken());
+		Assertions.assertNotNull(newTokenVO.getRefreshToken());
 	}
 }
