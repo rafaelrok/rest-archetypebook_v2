@@ -1,13 +1,29 @@
-# rest-archetypebook_v2
+<h4 align="center"> 
+  # rest-archetypebook_v2
+</h4>
 
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+<p align="center">
+     <img alt="GitHub language count" src="https://img.shields.io/github/commit-status/rafaelrok/rest-archetypebook_v2/main/0d4a9c360f41bd33e2970edb2c3bdbec3ada6506?logo=git">
+     <img alt="Repository size" src="https://img.shields.io/github/repo-size/rafaelrok/rest-archetypebook_v2?logo=github">
+     <a href="https://twitter.com/RafaelV38440615">
+      <img alt="Siga no Twitter" src="https://img.shields.io/twitter/url?url=https://github.com/rafaelrok/rest-archetypebook_v2/edit/main/README.md">
+     </a>  
+     <a href="https://github.com/rest-archetypebook_v2/README.md/commits/master">
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/rafaelrok/rest-archetypebook_v2">
+     </a>
+     <a href="https://github.com/rafaelrok/rest-archetypebook_v2/blob/main/LICENSE">
+      <img alt="License" src="https://img.shields.io/hexpm/l/apa?logo=apache">
+     </a>  
+     <a href="https://github.com/tgmarinho/README-ecoleta/stargazers">
+      <img alt="Stargazers" src="https://img.shields.io/github/stars/rafaelrok/rest-archetypebook_v2?style=social">
+     </a>
+     <a href="https://medium.com/@rafael">
+      <img alt="medium" src="https://img.shields.io/twitter/url?label=Medium&logo=medium&style=social&url=https%3A%2F%2Fmedium.com%2F%40rafael.">
+     </a>
+  </p>
 
 <img src="Em progresso...." alt="Em progresso...">
 
@@ -83,10 +99,7 @@ Para contribuir com `rest-archetypebook_v2`, siga estas etapas:
 
 Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-## Responsaveis
-
-Desenvolvedor:
-
+## Desenvolvedor
 <table>
   <tr>
     <td align="center">
@@ -99,6 +112,19 @@ Desenvolvedor:
     </td>
   </tr>
 </table>
+<table>
+  <tr>
+    <a href="https://www.linkedin.com/in/rafaelvieira-s/">
+      <img alt="linkedin" src="https://img.shields.io/twitter/url?label=Linkedin&logo=linkedin&style=social&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Frafaelvieira-s%2F">
+    </a>
+    <a href="https://medium.com/@rafael">
+      <img alt="medium" src="https://img.shields.io/twitter/url?label=Medium&logo=medium&style=social&url=https%3A%2F%2Fmedium.com%2F%40rafael.">
+    </a>
+    <a href="rafaelrok25@gmail.com">
+      <img alt="gmail" src="https://img.shields.io/twitter/url?label=gmail&logo=gmail&style=social&url=https%3A%2F%2Fmail.google.com%2F">
+    </a>
+  </tr>
+</table>
 
 
 ## Seja um contribuidor<br>
@@ -108,5 +134,9 @@ Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contr
 ## 📝 Licença
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+
+##  Versões do README
+
+[Português 🇧🇷](./README.md)  |  [Inglês sem emojis 🇺🇸](./README-en.md) 
 
 [⬆ Voltar ao topo](#rest-archetypebook_v2)<br>
