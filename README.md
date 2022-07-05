@@ -25,12 +25,15 @@
      </a>
   </p>
 
+---
 <img src="Em progresso...." alt="Em progresso...">
 
+---
 > Prejeto tem por sua vez explorar os conceitos mais profundos de uma REST API, com base em tecnologias que envolve o universo do JAVA com framework spring boot
 > e suas peculiaridades, projeto envolve a seguinte solução um biblioteca virtual para locação de livros digitais, onde por sua vez será utilizado para fins educativo 
 > para de exploração de recursos que envolva a liguagem java e spring, porem com evolução constante da API.
 
+---
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento aque descre algumas das tecnologias que compoe o projeto e as próximas atualizações serão voltadas nas seguintes 
@@ -52,6 +55,7 @@ tarefas que estão desmarcadas:
 - [ ] Pipeline Jenkins
 - [ ] Implantação AWS
 
+---
 ## Pré-requisitos
 
 O projeto tende a utilizar as tecnologias mais atuais a fim de explorar seu recurso, assim com JAVA JDK 18, spring boot 3.0.0-M3(Lançamento em novembro), então 
@@ -63,6 +67,7 @@ Aqui estão os principais requisitos para conseguir clonar e utilizar o projeto 
 * Sistema operacional: `Windows / Linux / Mac`
 * Lei a documentação do projeto `(Em desenvolvimento)`
 
+---
 ## Instalando `rest-archetypebook_v2`
 
 Para Utilizar a API `rest-archetypebook_v2`, após o procedimento acima, siga estas etapas:
@@ -72,8 +77,9 @@ Linux e macOS:
 
 Windows:
 * Abra o terminal e utilize o `git clone git@github.com:rafaelrok/rest-archetypebook_v2.git`
+---
 
-## ☕ Usando `rest-archetypebook_v2`
+## ☕Usando `rest-archetypebook_v2`
 
 Para usar `rest-archetypebook_v2`, siga estas etapas:
 
