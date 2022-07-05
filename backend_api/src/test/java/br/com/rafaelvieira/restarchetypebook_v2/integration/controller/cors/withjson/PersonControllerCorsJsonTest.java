@@ -44,7 +44,7 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 	@Test
 	@Order(0)
 	public void authorization() throws JsonMappingException, JsonProcessingException {
-		AccountCredentialsVO user = new AccountCredentialsVO("leandro", "admin123");
+		AccountCredentialsVO user = new AccountCredentialsVO("rafael", "admin123");
 		
 		var accessToken = given()
 				.basePath("/auth/signin")
@@ -76,7 +76,7 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 		
 		var content = given().spec(specification)
 				.contentType(ConfigTest.CONTENT_TYPE_JSON)
-					.header(ConfigTest.HEADER_PARAM_ORIGIN, ConfigTest.ORIGIN_ERUDIO)
+					.header(ConfigTest.HEADER_PARAM_ORIGIN, ConfigTest.ORIGIN_GOOGLE)
 					.body(person)
 					.when()
 					.post()
@@ -111,7 +111,7 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 	
 		var content = given().spec(specification)
 				.contentType(ConfigTest.CONTENT_TYPE_JSON)
-					.header(ConfigTest.HEADER_PARAM_ORIGIN, ConfigTest.ORIGIN_SEMERU)
+					.header(ConfigTest.HEADER_PARAM_ORIGIN, ConfigTest.ORIGIN_MSN)
 					.body(person)
 				.when()
 					.post()
@@ -132,7 +132,7 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 			
 		var content = given().spec(specification)
 				.contentType(ConfigTest.CONTENT_TYPE_JSON)
-					.header(ConfigTest.HEADER_PARAM_ORIGIN, ConfigTest.ORIGIN_ERUDIO)
+					.header(ConfigTest.HEADER_PARAM_ORIGIN, ConfigTest.ORIGIN_GOOGLE)
 					.pathParam("id", person.getId())
 					.when()
 					.get("{id}")
@@ -167,7 +167,7 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 		
 		var content = given().spec(specification)
 				.contentType(ConfigTest.CONTENT_TYPE_JSON)
-					.header(ConfigTest.HEADER_PARAM_ORIGIN, ConfigTest.ORIGIN_SEMERU)
+					.header(ConfigTest.HEADER_PARAM_ORIGIN, ConfigTest.ORIGIN_MSN)
 					.pathParam("id", person.getId())
 					.when()
 					.get("{id}")

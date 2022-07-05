@@ -53,7 +53,7 @@ public class BookControllerJsonTest extends AbstractIntegrationTest {
     @Order(1)
     public void authorization() {
         AccountCredentialsVO user = new AccountCredentialsVO();
-        user.setUsername("leandro");
+        user.setUsername("rafael");
         user.setPassword("admin123");
 
         var token =
