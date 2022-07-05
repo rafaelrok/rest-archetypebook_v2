@@ -9,7 +9,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
-<img src="Em progresso...." alt="   Em progresso...">
+<img src="Em progresso...." alt="Em progresso...">
 
 > Prejeto tem por sua vez explorar os conceitos mais profundos de uma REST API, com base em tecnologias que envolve o universo do JAVA com framework spring boot
 > e suas peculiaridades, projeto envolve a seguinte solução um biblioteca virtual para locação de livros digitais, onde por sua vez será utilizado para fins educativo 
@@ -31,6 +31,7 @@ tarefas que estão desmarcadas:
 - [x] ORM
 - [x] JSON Serialization
 - [ ] Spring Batch
+- [ ] RabbitMQ
 - [ ] Java email
 - [ ] Pipeline Jenkins
 - [ ] Implantação AWS
