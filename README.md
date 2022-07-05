@@ -51,16 +51,10 @@ Aqui estão os principais requisitos para conseguir clonar e utilizar o projeto 
 Para Utilizar a API `rest-archetypebook_v2`, após o procedimento acima, siga estas etapas:
 
 Linux e macOS:
-```
-- Abra o terminal e utilize o `git clone git@github.com:rafaelrok/rest-archetypebook_v2.git`
-
-```
+* Abra o terminal e utilize o `git clone git@github.com:rafaelrok/rest-archetypebook_v2.git`
 
 Windows:
-```
-- Abra o terminal e utilize o `git clone git@github.com:rafaelrok/rest-archetypebook_v2.git`
-
-```
+* Abra o terminal e utilize o `git clone git@github.com:rafaelrok/rest-archetypebook_v2.git`
 
 ## ☕ Usando `rest-archetypebook_v2`
 
