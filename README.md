@@ -133,10 +133,6 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
 </table>
 
 
-## Seja um contribuidor<br>
-
-Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
-
 ## 📝 Licença
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
