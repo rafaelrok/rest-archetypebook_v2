@@ -126,7 +126,7 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
     <a href="https://medium.com/@rafael">
       <img alt="medium" src="https://img.shields.io/twitter/url?label=Medium&logo=medium&style=social&url=https%3A%2F%2Fmedium.com%2F%40rafael.">
     </a>
-    <a href="rafaelrok25@gmail.com">
+    <a href = "mailto:rafaelrok25@gmail.com">
       <img alt="gmail" src="https://img.shields.io/twitter/url?label=gmail&logo=gmail&style=social&url=https%3A%2F%2Fmail.google.com%2F">
     </a>
   </tr>
@@ -139,6 +139,6 @@ Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais
 
 ##  Versões do README
 
-[Português 🇧🇷](./README.md)  |  [Inglês sem emojis 🇺🇸](./README-en.md) 
+[Português 🇧🇷](./README.md)  |  [Inglês 🇺🇸](./README-en.md) 
 
 [⬆ Voltar ao topo](#rest-archetypebook_v2)<br>
