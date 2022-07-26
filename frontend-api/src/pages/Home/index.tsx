@@ -6,16 +6,14 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Header from '../../components/Header';
 import MainFeaturedPost from '../../components/MainFeaturedPost';
 import FeaturedPost from '../../components/FeaturedPost';
 import Main from '../../components/Main';
 import Sidebar from '../../components/Sidebar';
-import Footer from '../../components/Footer';
 
-//import post1 from './blog-post.1.md';
-//import post2 from './blog-post.2.md';
-//import post3 from './blog-post.3.md';
+import post1 from './blog-post.1.md';
+import post2 from './blog-post.2.md';
+import post3 from './blog-post.3.md';
 
 const sections = [
     { title: 'Technology', url: '#' },
@@ -58,11 +56,7 @@ const featuredPosts = [
     },
 ];
 
-const posts = [
-    './blog-post.1.md' as 'post1',
-    './blog-post.1.md' as 'post2',
-    './blog-post.1.md' as 'post3'
-];
+const posts = [post1, post2, post3];
 
 const sidebar = {
     title: 'About',
@@ -95,7 +89,6 @@ export default function Home() {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <Container maxWidth="lg">
-                <Header title="Blog" sections={sections} />
                 <main>
                     <MainFeaturedPost post={mainFeaturedPost} />
                     <Grid container spacing={4}>
@@ -114,10 +107,6 @@ export default function Home() {
                     </Grid>
                 </main>
             </Container>
-            <Footer
-                title="Footer"
-                description="Something here to give the footer a purpose!"
-            />
         </ThemeProvider>
     );
 }

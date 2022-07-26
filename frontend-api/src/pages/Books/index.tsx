@@ -1,4 +1,5 @@
-import * as React from 'react';
+import { useState, useEffect, useCallback } from 'react';
+
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import CameraIcon from '@mui/icons-material/PhotoCamera';
@@ -13,27 +14,70 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Pagination } from '@mui/material';
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="text.secondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://github.com/rafaelrok">
-                Dev Rafael Vieira
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
+import api from '../../services/api'
+import { Book } from '../../types/book';
+import { SpringPage } from '../../types/vendor/spring';
+import { AxiosRequestConfig } from 'axios';
+import CardLoader from './CardLoader';
+import BookPrice from '../../components/BookPrice';
+import BookDate from '../../components/BookDate';
+
+
+type ControlComponentsData = {
+    activePage: number;
+};
+
+type Props = {
+    book: Book;
 }
-
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
-export default function Books() {
+const Books = ({ book }: Props) => {
+    const [page, setPage] = useState<SpringPage<Book>>();
+    const [isLoading, setIsLoading] = useState(false);
+
+    const accessToken = localStorage.getItem('accessToken');
+
+    const [controlComponentsData, setControlComponentsData] =
+        useState<ControlComponentsData>({
+            activePage: 0,
+        });
+
+    const handlePageChange = (pageNumber: number) => {
+        setControlComponentsData({ activePage: pageNumber });
+    };
+
+    const getBooks = useCallback(() => {
+        const params: AxiosRequestConfig = {
+            headers: {
+                AuthenticatorResponse: `Bearer ${accessToken}`,
+            },
+            method: 'GET',
+            url: 'api/book/v1',
+            params: {
+                page: controlComponentsData.activePage,
+                size: 12
+            },
+        };
+
+        setIsLoading(true);
+        api(params)
+            .then((response) => {
+                setPage(response.data);
+            })
+            .finally(() => {
+                setIsLoading(false);
+            });
+    }, [accessToken, controlComponentsData.activePage]);
+
+    useEffect(() => {
+        getBooks();
+    }, [getBooks]);
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -41,7 +85,7 @@ export default function Books() {
                 <Toolbar>
                     <CameraIcon sx={{ mr: 2 }} />
                     <Typography variant="h6" color="inherit" noWrap>
-                        Album layout
+                        Catalogo de Livros
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -62,7 +106,7 @@ export default function Books() {
                             color="text.primary"
                             gutterBottom
                         >
-                            Album layout
+                            Livraria
                         </Typography>
                         <Typography variant="h5" align="center" color="text.secondary" paragraph>
                             Something short and leading about the collection below—its contents,
@@ -80,39 +124,46 @@ export default function Books() {
                         </Stack>
                     </Container>
                 </Box>
+
                 <Container sx={{ py: 8 }} maxWidth="md">
                     {/* End hero unit */}
                     <Grid container spacing={4}>
-                        {cards.map((card) => (
-                            <Grid item key={card} xs={12} sm={6} md={4}>
-                                <Card
-                                    sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                                >
-                                    <CardMedia
-                                        component="img"
-                                        sx={{
-                                            // 16:9
-                                            pt: '56.25%',
-                                        }}
-                                        image="https://source.unsplash.com/random"
-                                        alt="random"
-                                    />
-                                    <CardContent sx={{ flexGrow: 1 }}>
-                                        <Typography gutterBottom variant="h5" component="h2">
-                                            Heading
-                                        </Typography>
-                                        <Typography>
-                                            This is a media card. You can use this section to describe the
-                                            content.
-                                        </Typography>
-                                    </CardContent>
-                                    <CardActions>
-                                        <Button size="small">View</Button>
-                                        <Button size="small">Edit</Button>
-                                    </CardActions>
-                                </Card>
-                            </Grid>
-                        ))}
+                        {isLoading ? (
+                            <CardLoader />
+                        ) : (
+                            page?.content?.map((book) => (
+                                <Grid item key={book.id} xs={12} sm={6} md={4}>
+                                    <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                                        <CardMedia
+                                            component="img"
+                                            sx={{// 16:9
+                                                pt: '56.25%',
+                                            }}
+                                            image="https://source.unsplash.com/random"
+                                            alt="random"
+                                        />
+                                        <CardContent sx={{ flexGrow: 1 }}>
+                                            <Typography gutterBottom variant="h5" component="h2">
+                                                {book.title}
+                                            </Typography>
+                                            <Typography>
+                                                {book.author}
+                                            </Typography>
+                                            <Typography>
+                                                <BookDate date={book.launchDate} />
+                                            </Typography>
+                                            <Typography>
+                                                <BookPrice price={book.price} />
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions>
+                                            <Button size="small">View</Button>
+                                            <Button size="small">Edit</Button>
+                                        </CardActions>
+                                    </Card>
+                                </Grid>
+                            ))
+                        )}
                     </Grid>
                 </Container>
             </main>
@@ -129,9 +180,19 @@ export default function Books() {
                 >
                     Something here to give the footer a purpose!
                 </Typography>
-                <Copyright />
             </Box>
             {/* End footer */}
+            <Stack spacing={2}>
+                <Pagination
+                    defaultPage={page?.number}
+                    page={page ? page.totalPages : 0}
+                    count={3}
+                    color="primary"
+                    onChange={(pageNumber) => handlePageChange(page?.number ?? 0)}
+                />
+            </Stack>
         </ThemeProvider>
     );
 }
+
+export default Books;

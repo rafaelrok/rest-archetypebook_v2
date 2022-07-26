@@ -8,8 +8,12 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Pricing from './pages/Pricing';
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 const Routes = () => (
   <Router>
+    <Header />
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/auth" exact component={SignIn} />
@@ -18,6 +22,7 @@ const Routes = () => (
       <Route path="/books" component={Books} />
       <Route path="/book/new/:bookId" component={NewBook} />
     </Switch>
+    <Footer />
   </Router>
 )
 
