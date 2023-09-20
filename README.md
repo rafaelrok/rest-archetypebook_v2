@@ -26,15 +26,17 @@
   </p>
 
 ---
+<img src="https://res.cloudinary.com/dkar9uu7g/image/upload/v1695224668/rafaelvieira-dev/archetypebook_izmnmk.png">
+
+> Prejeto tem por sua vez explorar os conceitos mais profundos de uma REST API, com base em tecnologias que envolve o universo do JAVA com framework spring boot
+> e suas peculiaridades, projeto envolve a seguinte solução um biblioteca virtual para locação de livros digitais, onde por sua vez será utilizado para fins educativo
+> para de exploração de recursos que envolva a liguagem java e spring, porem com evolução constante da API.
+
+<br/>
 <img src="https://res.cloudinary.com/dkar9uu7g/image/upload/v1695220084/rafaelvieira-dev/Projects_GitHub/home_co0sxd.png" alt="Em progresso...">
 <img src="https://res.cloudinary.com/dkar9uu7g/image/upload/v1695220084/rafaelvieira-dev/Projects_GitHub/Catalogo_drvx3g.png" alt="Em progresso...">
 <img src="https://res.cloudinary.com/dkar9uu7g/image/upload/v1695220084/rafaelvieira-dev/Projects_GitHub/login_lfxef4.png" alt="Em progresso...">
 
-
-
-> Prejeto tem por sua vez explorar os conceitos mais profundos de uma REST API, com base em tecnologias que envolve o universo do JAVA com framework spring boot
-> e suas peculiaridades, projeto envolve a seguinte solução um biblioteca virtual para locação de livros digitais, onde por sua vez será utilizado para fins educativo 
-> para de exploração de recursos que envolva a liguagem java e spring, porem com evolução constante da API.
 
 ---
 ### Ajustes e melhorias
