@@ -1,0 +1,22 @@
+.book-date-container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    transition: all 0.2s ease-in-out;
+}
+
+.book-date-container span {
+    font-size: 14px;
+    color: #9E9E9E;
+    margin-top: 4px;
+}
+
+.book-date-container h3 {
+    font-size: 15px;
+    color: #9E9E9E;
+    margin-left: 10px;
+    align-items: start;
+    justify-content: start;
+    padding-top: 4px;
+}

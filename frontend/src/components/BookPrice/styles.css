@@ -1,0 +1,20 @@
+.book-price-container {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: end;
+    transition: all 0.2s ease-in-out;
+}
+
+.book-price-container span {
+    font-size: 18px;
+    color: #9E9E9E;
+}
+
+.book-price-container h3 {
+    align-self: flex-end;
+    margin-top: 40px;
+    font-size: 24px;
+    color: #407BFF;
+    margin-left: 10px;
+}
