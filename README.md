@@ -1,6 +1,6 @@
-<h4 align="center"> 
+<h2 align="center"> 
   # rest-archetypebook_v2
-</h4>
+</h2>
 
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
@@ -26,9 +26,12 @@
   </p>
 
 ---
-<img src="Em progresso...." alt="Em progresso...">
+<img src="https://res.cloudinary.com/dkar9uu7g/image/upload/v1695220084/rafaelvieira-dev/Projects_GitHub/home_co0sxd.png" alt="Em progresso...">
+<img src="https://res.cloudinary.com/dkar9uu7g/image/upload/v1695220084/rafaelvieira-dev/Projects_GitHub/Catalogo_drvx3g.png" alt="Em progresso...">
+<img src="https://res.cloudinary.com/dkar9uu7g/image/upload/v1695220084/rafaelvieira-dev/Projects_GitHub/login_lfxef4.png" alt="Em progresso...">
 
----
+
+
 > Prejeto tem por sua vez explorar os conceitos mais profundos de uma REST API, com base em tecnologias que envolve o universo do JAVA com framework spring boot
 > e suas peculiaridades, projeto envolve a seguinte solução um biblioteca virtual para locação de livros digitais, onde por sua vez será utilizado para fins educativo 
 > para de exploração de recursos que envolva a liguagem java e spring, porem com evolução constante da API.
